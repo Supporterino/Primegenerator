@@ -17,7 +17,6 @@ public class Main {
         String eingabe = sc.next();
         int border = Integer.parseInt(eingabe);
         solve.setBorder(border);
-        System.out.println(solve.getBorder());
         int[] primenumbers = solve.calculate_Primes();
         System.out.println("Primzahlen:" + Arrays.toString(primenumbers));
     }
@@ -64,7 +63,6 @@ class Solver implements PrimeGenerator {
 
     private int[] ListConversion(List<Integer> input){
         int size = input.size();
-        System.out.println(size);
         int[] output = new int[size];
         Integer[] temp = input.toArray(new Integer[size]);
         for (int i = 0; i < size; i++) {
