@@ -32,7 +32,6 @@ class Solver implements PrimeGenerator {
 
     private int Border;
 
-    @Override
     public int[] calculate_Primes() {
         boolean[] gestrichen = new boolean[Border];
         List<Integer> primes = new ArrayList<>();
@@ -57,8 +56,7 @@ class Solver implements PrimeGenerator {
 
         }
 
-        int[] Primes_out = ListConversion(primes);
-        return Primes_out;
+        return ListConversion(primes);
     }
 
     private int[] ListConversion(List<Integer> input){
@@ -71,12 +69,10 @@ class Solver implements PrimeGenerator {
         return output;
     }
 
-    @Override
     public void setBorder(int x) {
         this.Border = x;
     }
 
-    @Override
     public int getBorder() {
         return Border;
     }
