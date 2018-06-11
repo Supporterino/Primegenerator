@@ -1,5 +1,6 @@
 package de.bundesbank;
 
+import javax.swing.border.Border;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -38,16 +39,16 @@ class Solver implements PrimeGenerator {
         boolean[] gestrichen = new boolean[Border];
         List<Integer> primes = new ArrayList<>();
 
-        for (int i = 2; i <= sqrt(Border); i++) {
+        for (int i = 2; i < sqrt(Border); i++) {
             if(!gestrichen[i]){
                 primes.add(i);
-                for(int j = i*i; j <= Border; i++) {
+                for(int j = i*i; j < Border; i++) {
                     gestrichen[j] = true;
                 }
             }
         }
 
-        for (int i = (int)sqrt(Border)+1; i <= Border; i++) {
+        for (int i = (int)sqrt(Border)+1; i < Border; i++) {
             if(!gestrichen[i]){
                 primes.add(i);
             }
@@ -58,6 +59,7 @@ class Solver implements PrimeGenerator {
 
     private int[] ListConversion(List<Integer> input){
         int size = input.size();
+        System.out.println(size);
         int[] output = new int[size];
         Integer[] temp = input.toArray(new Integer[size]);
         for (int i = 0; i <= size; i++) {
