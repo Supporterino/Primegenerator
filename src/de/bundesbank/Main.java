@@ -20,7 +20,7 @@ public class Main {
         solve.setBorder(border);
         System.out.println(solve.getBorder());
         int[] primenumbers = solve.calculate_Primes();
-        System.out.println(Arrays.toString(primenumbers));
+        System.out.println("Primzahlen:" + Arrays.toString(primenumbers));
     }
 }
 
