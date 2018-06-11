@@ -1,3 +1,5 @@
+// return array of ints plox
+
 package de.bundesbank;
 
 import javax.swing.border.Border;
@@ -84,3 +86,4 @@ class Solver implements PrimeGenerator {
         return Border;
     }
 }
+
