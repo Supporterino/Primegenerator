@@ -1,8 +1,5 @@
-// return array of ints plox
-
 package de.bundesbank;
 
-import javax.swing.border.Border;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
