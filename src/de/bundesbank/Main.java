@@ -38,21 +38,27 @@ class Solver implements PrimeGenerator {
     public int[] calculate_Primes() {
         boolean[] gestrichen = new boolean[Border];
         List<Integer> primes = new ArrayList<>();
+        int sqrt_Border = (int)sqrt(Border);
 
-        for (int i = 2; i < sqrt(Border); i++) {
-            if(!gestrichen[i]){
-                primes.add(i);
-                for(int j = i*i; j < Border; i++) {
-                    gestrichen[j] = true;
+        for (int i = 2; i < sqrt_Border; i++) {
+                for(int j = i; j < Border; j++) {
+                    if(j!=i){
+                        if(j%i == 0){
+                            gestrichen[j] = true;
+                        }
+                    }
                 }
+        }
+        for(int k = 1; k < Border; k++) {
+
+            if (!gestrichen[k]) {
+
+                primes.add(k);
+
             }
+
         }
 
-        for (int i = (int)sqrt(Border)+1; i < Border; i++) {
-            if(!gestrichen[i]){
-                primes.add(i);
-            }
-        }
         int[] Primes_out = ListConversion(primes);
         return Primes_out;
     }
@@ -62,7 +68,7 @@ class Solver implements PrimeGenerator {
         System.out.println(size);
         int[] output = new int[size];
         Integer[] temp = input.toArray(new Integer[size]);
-        for (int i = 0; i <= size; i++) {
+        for (int i = 0; i < size; i++) {
             output[i] = temp[i];
         }
         return output;
