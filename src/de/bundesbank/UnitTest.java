@@ -6,7 +6,7 @@
 
 package de.bundesbank;
 
-public class unit_test implements PrimeGenerator{
+public class UnitTest implements PrimeGenerator{
 
 	// prime check for single number
 	public static boolean isPrime(int prime){
