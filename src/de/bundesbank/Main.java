@@ -1,3 +1,7 @@
+/**
+    @author Lars Roth
+*/
+
 package de.bundesbank;
 
 import java.util.ArrayList;
@@ -5,11 +9,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import PrimeGenerator;
+
 import static java.lang.Math.sqrt;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        // run unit tests
+
+        // unit test 1
+
+
         Scanner sc = new Scanner(System.in);
         Solver solve = new Solver();
 
@@ -22,13 +34,7 @@ public class Main {
     }
 }
 
-interface PrimeGenerator {
-    int[] calculate_Primes();
-    void setBorder(int x);
-    int getBorder();
-}
-
-class Solver implements PrimeGenerator {
+public class Solver implements PrimeGenerator {
 
     private int Border;
 

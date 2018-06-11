@@ -6,7 +6,12 @@
 
 package de.bundesbank;
 
-public class UnitTest implements PrimeGenerator{
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.lang.Math;
+
+public class UnitTest {
 
 	// prime check for single number
 	public static boolean isPrime(int prime){
@@ -31,6 +36,7 @@ public class UnitTest implements PrimeGenerator{
 		return true;
 	}
 
+	// check every prime number in an array
 	public static boolean checkPrimesInArrayCorrect(int[] primes){
 
 		for(int prime:primes){ // iterate through (generated) primes
@@ -44,10 +50,16 @@ public class UnitTest implements PrimeGenerator{
 		return true;
 	}
 
-	public static void main(String[] args){
+	// random numbers in list with "size" elements
+	public static List<Integer> generateTestList(int size){
 
-		int[] data = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47};
+		List<Integer> testlist = new ArrayList<Integer>();
 
-		System.out.println(checkPrimesInArrayCorrect(data) ? "gut" : "schlecht");
+		for(int i = 0; i < size; i++){
+
+			testlist.add((int)((Math.random() - 0.5) * 2 * Integer.MAX_VALUE));
+		}
+
+		return testlist;
 	}
 }
