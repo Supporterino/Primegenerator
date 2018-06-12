@@ -38,19 +38,19 @@ public class Solver implements PrimeGenerator {
 //            }
 //
 //        }
-        for (int i = 0; i < sqrt_Border; i++) {
+        for (int i = 0; i < Border; i++) {
             isPrime[i] = true;
         }
 
         for (int i = 2; i <= sqrt_Border; i++) {
             if(isPrime[i]){
-                for (int j = i * i; j < sqrt_Border; j += i) {
+                for (int j = i * i; j < Border; j += i) {
                     isPrime[j] = false;
                 }
             }
         }
 
-        for (int k = 2; k < sqrt_Border; k++) {
+        for (int k = 2; k < Border; k++) {
             if(isPrime[k]) {
                 primes.add(k);
             }
