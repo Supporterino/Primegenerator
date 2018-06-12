@@ -5,9 +5,7 @@
 package de.bundesbank;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 import static java.lang.Math.*;
 
@@ -20,24 +18,6 @@ public class Solver implements PrimeGenerator {
         List<Integer> primes = new ArrayList<>();
         int sqrt_Border = (int)sqrt(Border);
 
-//        for (int i = 2; i < sqrt_Border; i++) {
-//                for(int j = i; j < Border; j++) {
-//                    if(j!=i){
-//                        if(j%i == 0){
-//                            gestrichen[j] = true;
-//                        }
-//                    }
-//                }
-//        }
-//        for(int k = 2; k < Border; k++) {
-//
-//            if (!gestrichen[k]) {
-//
-//                primes.add(k);
-//
-//            }
-//
-//        }
         for (int i = 0; i < Border; i++) {
             isPrime[i] = true;
         }
@@ -70,7 +50,6 @@ public class Solver implements PrimeGenerator {
         return output;
     }
 
-    // fixed: absolute value of border .NK
     public void setBorder(int x) {
         this.Border = abs(x);
     }
