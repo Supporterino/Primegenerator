@@ -20,11 +20,9 @@ public class Main {
             @author Niklas Koopmann
         */
 
-        //UnitTest testRoutine = new UnitTest();
-
         int passedTests = UnitTest.runTests();
 
-        System.out.println("Bestandene Tests: " + passedTests);
+        System.out.println("Bestandene Tests: " + passedTests + "/3");
 
         /**
             main routine
