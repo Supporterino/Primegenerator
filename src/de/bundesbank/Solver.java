@@ -31,7 +31,7 @@ public class Solver implements PrimeGenerator {
                     }
                 }
         }
-        for(int k = 1; k < Border; k++) {
+        for(int k = 2; k < Border; k++) {
 
             if (!gestrichen[k]) {
 
