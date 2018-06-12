@@ -22,7 +22,7 @@ public class Main {
 
         int passedTests = UnitTest.runTests();
 
-        System.out.println("Bestandene Tests: " + passedTests + "/3");
+        System.out.println("Tests passed: " + passedTests + "/3");
 
         /**
             main routine
