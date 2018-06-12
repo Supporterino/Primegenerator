@@ -19,7 +19,7 @@ public class UnitTest {
 	// run all tests
 	public static int runTests(){
 
-		// measuring time taken for tests (partially DEBUG)
+		// measuring time taken for tests (partially for performance improvement)
 		Date start = new Date();
 
 		int testsPassed = 0;
@@ -137,6 +137,8 @@ public class UnitTest {
 
 				return false;
 			}
+
+			System.out.println("Element at index " + i + " in array tested successfully.");
 		}
 
 		return true;
