@@ -16,7 +16,7 @@ public class Solver implements PrimeGenerator {
     private int Border;
 
     public int[] calculate_Primes() {
-        boolean[] gestrichen = new boolean[Border];
+        boolean[] isPrime = new boolean[Border];
         List<Integer> primes = new ArrayList<>();
         int sqrt_Border = (int)sqrt(Border);
 
@@ -39,19 +39,19 @@ public class Solver implements PrimeGenerator {
 //
 //        }
         for (int i = 0; i < sqrt_Border; i++) {
-            gestrichen[i] = true;
+            isPrime[i] = true;
         }
 
         for (int i = 2; i <= sqrt_Border; i++) {
-            if(gestrichen[i]){
+            if(isPrime[i]){
                 for (int j = i * i; j < sqrt_Border; j += i) {
-                    gestrichen[j] = false;
+                    isPrime[j] = false;
                 }
             }
         }
 
         for (int k = 2; k < sqrt_Border; k++) {
-            if(gestrichen[k]) {
+            if(isPrime[k]) {
                 primes.add(k);
             }
         }
