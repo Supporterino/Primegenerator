@@ -152,11 +152,11 @@ public class UnitTest {
 
 		 	int testInt = (int)((Math.random() - 0.5) * 2 * Integer.MAX_VALUE);
 
-		 	System.out.println("Setting Border to number " + testInt + "...");
+		 	System.out.print("Setting Border to number " + testInt + "... ");
 
 		 	testSetterSolver.setBorder(testInt);
 
-		 	System.out.println("Border set.");
+		 	System.out.print("Border set.\n");
 
 			if(Math.abs(testInt) != testSetterSolver.getBorder()){
 
