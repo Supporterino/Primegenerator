@@ -15,10 +15,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // run unit tests
+        /**
+            running unit tests
+            @author Niklas Koopmann
+        */
 
-        // unit test 1
+        //UnitTest testRoutine = new UnitTest();
 
+        int passedTests = UnitTest.runTests();
+
+        System.out.println("Bestandene Tests: " + passedTests);
+
+        /**
+            main routine
+            @author Lars Roth
+        */
         Scanner sc = new Scanner(System.in);
         Solver solve = new Solver();
 

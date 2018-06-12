@@ -1,4 +1,6 @@
-
+/**
+    @author Lars Roth
+*/
 
 package de.bundesbank;
 
@@ -40,7 +42,7 @@ public class Solver implements PrimeGenerator {
         return ListConversion(primes);
     }
 
-    private int[] ListConversion(List<Integer> input){
+    public int[] ListConversion(List<Integer> input){
         int size = input.size();
         int[] output = new int[size];
         Integer[] temp = input.toArray(new Integer[size]);

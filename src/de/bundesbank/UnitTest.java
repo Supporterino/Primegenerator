@@ -14,6 +14,30 @@ import de.bundesbank.*;
 
 public class UnitTest {
 
+	// run all tests
+	public static int runTests(){
+
+		int testsPassed = 0;
+		int testsTotal = 4;
+
+		Solver testSolver = new Solver();
+
+		// test data for list-array-conversion:
+		int testCasesListArray = 100000;
+		List<Integer> testList = generateTestList(testCasesListArray);
+
+		// convert using function
+		int[] arrayFromList = testSolver.ListConversion(testList);
+
+		// compare array to list and increment counter
+		if(compareListToArray(testList, arrayFromList)) testsPassed++;
+
+		System.out.println("Tests ran.");
+
+		return testsPassed;
+	}
+
+
 	// prime check for single number
 	public static boolean isPrime(int prime){
 
@@ -62,5 +86,16 @@ public class UnitTest {
 		}
 
 		return testlist;
+	}
+
+	// compare each element in list to corresponding element in array
+	public static boolean compareListToArray(List<Integer> list, int[] arr){
+
+		for(int i = 0; i < arr.length; i ++){
+
+			if(list.get(i) != arr[i]) return false;
+		}
+
+		return true;
 	}
 }
