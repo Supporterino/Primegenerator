@@ -12,10 +12,15 @@ import java.util.List;
 import java.util.Scanner;
 import java.lang.Math;
 
+import java.util.Date;
+
 public class UnitTest {
 
 	// run all tests
 	public static int runTests(){
+
+		// measuring time taken for tests (partially DEBUG)
+		Date start = new Date();
 
 		int testsPassed = 0;
 
@@ -32,31 +37,34 @@ public class UnitTest {
 		if(compareListToArray(testList, arrayFromList)){
 
 			System.out.println("Testing of ListConversion(List<Integer>) successful.");
-
 			testsPassed++;
+
 		}else System.out.println("WARNING! Testing of ListConversion(List<Integer>) failed.");
 
 		// run test for getter and setter method
 		if(testGetterAndSetter(testSolver)){
 
 			System.out.println("Testing of getBorder() and setBorder(int) successful.");
-
 			testsPassed++;
+
 		}else System.out.println("WARNING! Testing of getBorder() and setBorder(int) failed.");
 
 		// run test for consistency of generated primes
 		testSolver.setBorder(1000);
-
 		System.out.println("Border set.");
 
 		if(checkPrimesInArrayCorrect(testSolver.calculate_Primes())){
 
 			System.out.println("Testing of calculate_Primes() successful.");
-
 			testsPassed++;
+
 		}else System.out.println("WARNING! Testing of calculate_Primes() failed. At least 1 generated number was not prime!");
 
 		System.out.println("Tests ran.");
+
+		Date end = new Date();
+		long intvl = end.getTime() - start.getTime();
+		System.out.println("Time taken: " + intvl/1000.0 + " s");
 
 		return testsPassed;
 	}
