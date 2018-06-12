@@ -60,11 +60,9 @@ public class UnitTest {
 
 		}else System.out.println("WARNING! Testing of calculate_Primes() failed. At least 1 generated number was not prime!");
 
-		System.out.println("Tests ran.");
-
 		Date end = new Date();
 		long intvl = end.getTime() - start.getTime();
-		System.out.println("Time taken: " + intvl/1000.0 + " s");
+		System.out.println("Tests completed. Time taken: " + intvl/1000.0 + " s");
 
 		return testsPassed;
 	}
