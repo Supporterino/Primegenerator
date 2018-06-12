@@ -15,31 +15,47 @@ public class Solver implements PrimeGenerator {
 
     private int Border;
 
-    // to fix: 1 is not a prime number .NK
-
     public int[] calculate_Primes() {
         boolean[] gestrichen = new boolean[Border];
         List<Integer> primes = new ArrayList<>();
         int sqrt_Border = (int)sqrt(Border);
 
-        for (int i = 2; i < sqrt_Border; i++) {
-                for(int j = i; j < Border; j++) {
-                    if(j!=i){
-                        if(j%i == 0){
-                            gestrichen[j] = true;
-                        }
-                    }
+//        for (int i = 2; i < sqrt_Border; i++) {
+//                for(int j = i; j < Border; j++) {
+//                    if(j!=i){
+//                        if(j%i == 0){
+//                            gestrichen[j] = true;
+//                        }
+//                    }
+//                }
+//        }
+//        for(int k = 2; k < Border; k++) {
+//
+//            if (!gestrichen[k]) {
+//
+//                primes.add(k);
+//
+//            }
+//
+//        }
+        for (int i = 0; i < sqrt_Border; i++) {
+            gestrichen[i] = true;
+        }
+
+        for (int i = 2; i <= sqrt_Border; i++) {
+            if(gestrichen[i]){
+                for (int j = i * i; j < sqrt_Border; j += i) {
+                    gestrichen[j] = false;
                 }
-        }
-        for(int k = 2; k < Border; k++) {
-
-            if (!gestrichen[k]) {
-
-                primes.add(k);
-
             }
-
         }
+
+        for (int k = 2; k < sqrt_Border; k++) {
+            if(gestrichen[k]) {
+                primes.add(k);
+            }
+        }
+
 
         return ListConversion(primes);
     }
