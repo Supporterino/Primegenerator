@@ -35,7 +35,7 @@ public class Main {
                 System.out.println("Geben Sie die obere Grenze an");
                 border = sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.print("Keine gültige Zahl eingegeben");
+                System.out.println("Keine gültige Zahl eingegeben");
             }
             sc.nextLine(); // clears the buffer
         } while (border <= 0);
