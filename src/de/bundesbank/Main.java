@@ -35,14 +35,18 @@ public class Main {
                 System.out.println("Geben Sie die obere Grenze an");
                 border = sc.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Keine gültige Zahl eingegeben");
+                System.out.println("Keine gültige Zahl eingegeben! Exception: " + e);
             }
             sc.nextLine(); // clears the buffer
         } while (border <= 0);
 
 
         solve.setBorder(border);
-        int[] primenumbers = solve.calculate_Primes();
-        System.out.println("Primzahlen:" + Arrays.toString(primenumbers));
+        try{
+            int[] primenumbers = solve.calculate_Primes();
+            System.out.println("Primzahlen:" + Arrays.toString(primenumbers));
+        } catch(OutOfMemoryError E){
+            System.out.println("Der Arbeitsspeicher reicht zur Berechnung nicht aus. Versuchen Sie java -Xmx4096m de.bundesbank.Main. Error: " + E);
+        }
     }
 }
