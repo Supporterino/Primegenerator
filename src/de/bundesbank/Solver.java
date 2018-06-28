@@ -31,9 +31,10 @@ public class Solver implements PrimeGenerator {
         // iterate through array up to the sqrt of border 
         for (int i = 2; i <= sqrt_Border; i++) {
 
+            //checks if element i is prime
             if(isPrime[i]){
 
-                // to do: was zum fick?
+                // removes the multiples of the prime
                 for (int j = i * i; j < Border; j += i) {
                     isPrime[j] = false;
                 }
