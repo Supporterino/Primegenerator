@@ -1,7 +1,6 @@
 /**
     @author Lars Roth
 
-    to do: allgemeine Funktionsweise des Algorithmus beschreiben
 */
 
 package de.bundesbank;
