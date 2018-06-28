@@ -26,10 +26,13 @@ public class Main {
             main routine
             @author Lars Roth
         */
+
+        // setup scanner
         Scanner sc = new Scanner(System.in);
         Solver solve = new Solver();
         int border = 0;
 
+        // input border and catch wrong inputs
         do {
             try {
                 System.out.println("Geben Sie die obere Grenze an");
@@ -38,10 +41,14 @@ public class Main {
                 System.out.println("Keine gültige Zahl eingegeben! Exception: " + e);
             }
             sc.nextLine(); // clears the buffer
+
+        // repeat input if input incorrect
         } while (border <= 0);
 
 
         solve.setBorder(border);
+
+        // calculate primes, output array and catch exception if insufficient memory was supplied
         try{
             int[] primenumbers = solve.calculate_Primes();
             System.out.println("Primzahlen:" + Arrays.toString(primenumbers));

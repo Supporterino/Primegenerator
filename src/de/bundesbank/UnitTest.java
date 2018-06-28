@@ -23,6 +23,7 @@ Tests include:
 
 package de.bundesbank;
 
+// imports
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -35,7 +36,7 @@ public class UnitTest {
 	// run all tests
 	public static int runTests(){
 
-		// measuring time taken for tests (partially for performance improvement)
+		// measuring time taken for tests (partially for performance monitoring)
 		Date start = new Date();
 
 		int testsPassed = 0;
@@ -69,6 +70,7 @@ public class UnitTest {
 		testSolver.setBorder(1000);
 		System.out.println("Border set.");
 
+		// check integrity of primes in generated array
 		if(checkPrimesInArrayCorrect(testSolver.calculate_Primes())){
 
 			System.out.println("Testing of calculate_Primes() successful.");
@@ -85,21 +87,27 @@ public class UnitTest {
 
 
 	// prime check for single number
-	//@Test
+	// @Test
 	public static boolean isPrime(int prime){
 
 		System.out.println("Testing alleged prime number " + prime + ":");
 
+		// defined prime numbers
 		if(prime < 2) return false;
 		if(prime == 2) return true;
+
+		// filter out multiples of 2 (even numbers) for better performance
 		if(prime % 2 == 0) return false;
 
 		System.out.println("	Loop entered (number is odd and greater than 2).");
 		
+		// try division with every odd number smaller than alleged prime
 		for(int i = 3; i < prime; i += 2){
 
+			// shitload of outputs
 			System.out.println("	Division by " + i + "...");
 
+			// If the alleged prime is divisible by current number, it is not prime.
 			if(prime % i == 0) return false;
 		}
 
@@ -109,13 +117,15 @@ public class UnitTest {
 	}
 
 	// check every prime number in an array
-	//@Test
+	// @Test
 	public static boolean checkPrimesInArrayCorrect(int[] primes){
 
 		System.out.println("Testing primes in array...");
 
-		for(int prime:primes){ // iterate through (generated) primes
+		// iterate through (generated) primes
+		for(int prime:primes){ 
 
+			// error if alleged prime is not a real prime according to definition
 			if(!isPrime(prime)){
 
 				System.out.println("Error at generated prime " + prime + "! Not a prime number!");
@@ -128,11 +138,12 @@ public class UnitTest {
 	}
 
 	// random numbers in list with "size" elements
-	//@Test
+	// @Test
 	public static List<Integer> generateTestList(int size){
 
 		List<Integer> testlist = new ArrayList<Integer>();
 
+		// fill list with random numbers 
 		for(int i = 0; i < size; i++){
 
 			testlist.add((int)((Math.random() - 0.5) * 2 * Integer.MAX_VALUE));
@@ -142,11 +153,13 @@ public class UnitTest {
 	}
 
 	// compare each element in list to corresponding element in array
-	//@Test
+	// @Test
 	public static boolean compareListToArray(List<Integer> list, int[] arr){
 
+		// iterate through array and ...
 		for(int i = 0; i < arr.length; i ++){
 
+			// ... compare each item in the list to the one at the same index in the array
 			if(list.get(i) != arr[i]){
 
 				System.out.println("Error comparing list to array at index " + i + " with number\n in array " + arr[i] + "\n in list " + list.get(i));
@@ -154,6 +167,7 @@ public class UnitTest {
 				return false;
 			}
 
+			// shitload of console prints
 			System.out.println("Element at index " + i + " in array tested successfully.");
 		}
 
@@ -161,9 +175,11 @@ public class UnitTest {
 	}
 
 	// testing getter and setter
-	//@Test
+	// @Test
 	public static boolean testGetterAndSetter(Solver testSetterSolver){
 
+		// test getting and setting with 100000 random numbers
+		// also shitload of outputs
 		for(int i = 0; i < 100000; i++){
 
 		 	int testInt = (int)((Math.random() - 0.5) * 2 * Integer.MAX_VALUE);
@@ -174,6 +190,7 @@ public class UnitTest {
 
 		 	System.out.print("Border set.\n");
 
+		 	// error if gotten number is unequal to set number
 			if(Math.abs(testInt) != testSetterSolver.getBorder()){
 
 				System.out.println("Error setting and re-getting Border with number " + testSetterSolver.getBorder() + "!");
